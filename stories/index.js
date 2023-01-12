@@ -81,27 +81,26 @@ storiesOf("InterviewerListItem", module)
   })
   .add("Unselected", () => (
     <InterviewerListItem
-      id={interviewer.id}
+     // id={interviewer.id}
       name={interviewer.name}
       avatar={interviewer.avatar}
     />
   ))
   .add("Selected", () => (
     <InterviewerListItem
-      id={interviewer.id}
+      //id={interviewer.id}
       name={interviewer.name}
       avatar={interviewer.avatar}
       selected
     />
   ))
-  .add("Clickable", () => (
-    <InterviewerListItem
-      id={interviewer.id}
-      name={interviewer.name}
-      avatar={interviewer.avatar}
-      setInterviewer={action("setInterviewer")}
-    />
-  ));
+ .add("Clickable", () => (
+  <InterviewerListItem
+    name={interviewer.name}
+    avatar={interviewer.avatar}
+    setInterviewer={() => action("setInterviewer")(interviewer.id)}
+  />
+));
 
   const interviewers = [
     { id: 1, name: "Sylvia Palmer", avatar: "https://i.imgur.com/LpaY82x.png" },

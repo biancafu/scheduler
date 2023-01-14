@@ -1,5 +1,5 @@
 
- function getAppointmentsForDay(state, day) {
+ const getAppointmentsForDay = function(state, day) {
   //state contains two object: 
   //1)days (array of objects) 2)appointments (object of objects)
 
@@ -14,4 +14,18 @@
   return appointments;
 }
 
-module.exports = {getAppointmentsForDay};
+const getInterview = function(state, interview) {
+  //interview contains: id, time, interview object (student, interviewer)
+  //need to get the interviewer info from state.appointment.interview.interviewer (id) retrieve info from state.interview using state.appointments.interview.interviewer=== state.interviewers.id
+  if (!interview) return null;
+
+  const id = interview.interviewer;
+  // if (!Object.keys(state.interviewers).contains(id)) return null;
+  interview.interviewer = state.interviewers[id];
+
+  return interview;
+
+
+};
+
+module.exports = { getAppointmentsForDay, getInterview };

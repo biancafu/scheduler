@@ -26,12 +26,10 @@ const useApplicationData = function () {
         if (!appointment_data.interview) current_spots += 1;
       }
       //update spots for each day
-      console.log('current_spots', current_spots);
       copy_day.spots = current_spots;
       new_days.push(copy_day);
     }
     //update state.days 
-    console.log(new_days);
     setState({
       ...state,
       days: new_days

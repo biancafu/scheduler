@@ -45,7 +45,9 @@ const Appointment = function (props) {
   return (
     <article className="appointment">
       <Header time={props.time} />
-      {mode === EMPTY && <Empty onAdd={() => transition(CREATE)} />}
+      {mode === EMPTY && <Empty 
+      onAdd={() => transition(CREATE)} 
+      />}
       {mode === SHOW && (
         <Show
           student={props.interview.student}
@@ -85,5 +87,9 @@ const Appointment = function (props) {
     </article>
   );
 }
+
+// Appointment.propTypes = {
+//   interviewers: PropTypes.object.isRequired
+// };
 
 export default Appointment;

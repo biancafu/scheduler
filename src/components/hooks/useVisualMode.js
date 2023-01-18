@@ -12,12 +12,13 @@ const useVisualMode = function (initial) {
     });
   }
   const back = () => {
-    //new_history pops the latest mode from array, since we are going back
-    let new_history = history.length === 1 ? history : history.splice(0, history.length - 1);
-    //set mode to the previous mode according to history
-    setMode(new_history[new_history.length - 1]);
     //update history
-    setHistory(new_history);
+    setHistory(prev => {
+      const new_history = [...prev];
+      new_history.pop();
+      setMode(new_history[new_history.length - 1]);
+      return new_history
+    });
   };
 
 

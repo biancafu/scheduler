@@ -12,10 +12,9 @@ const useVisualMode = function (initial) {
     });
   }
   const back = () => {
-    //update history
     setHistory(prev => {
       const new_history = [...prev];
-      new_history.pop();
+      if (new_history.length > 1) new_history.pop();
       setMode(new_history[new_history.length - 1]);
       return new_history
     });

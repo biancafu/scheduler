@@ -15,9 +15,6 @@ const state = {
 };
 
 describe("Appointment", () => {
-  it("renders without crashing", () => {
-    render(<Appointment />);
-  });
 
   it("renders empty component (with show button) when no appointment exists", () => {
     const { getByAltText } = render(<Appointment />);

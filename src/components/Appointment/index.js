@@ -38,7 +38,6 @@ const Appointment = function (props) {
     props.cancelInterview(props.id)
       .then(() => transition(EMPTY))
       .catch(error => { 
-        console.log(error); 
         transition(ERROR_DELETE, true) });
   };
 
@@ -81,7 +80,7 @@ const Appointment = function (props) {
         onClose={back}
       />}
       {mode === ERROR_DELETE && <Error
-        message="Could not delete appointment"
+        message="Could not delete appointment."
         onClose={back}
       />}
     </article>

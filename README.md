@@ -83,6 +83,11 @@ npm run cypress
 ```
 # Screenshots
 
+!["Initial display"](https://github.com/biancafu/scheduler/blob/master/docs/appointment-show.png) <br>
+!["Hover on an appointment, edit/delete button shows up"](https://github.com/biancafu/scheduler/blob/master/docs/appointment-edit%26delete_button.png) <br>
+!["Add/Edit an appointment"](https://github.com/biancafu/scheduler/blob/master/docs/appointment-form%20(add%26edit).png)
+
+
 # APIs
 
 To reset data run:
